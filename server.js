@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'))
 });
 
-app.get('api/notes', (req, res) => {
+app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'))
 });
 
@@ -35,5 +35,34 @@ app.listen(PORT, () =>
 
 
 // API routes
+// GET
+app.get('/api/notes', (req, res) => {
+    fs.readFile('./db/db.json', (err, data) => {
+        if (err) throw err;
+        let dbData = JSON.parse(data);
+        res.json(dbData)
+    });
+});
+
+// POST
+app.post('/api/notes', (req, res) => {
+    console.info(`${req.method} request received to add a new note`);
+
+    const newNote = req.body;
+    
+    newNote.id = uuid();
+
+    db.push(newNote);
+
+    fs.writeFileSync('./db/db.json', JSON.stringify(db));
+
+    res.json(db);
+});
+
+// DELETE
+app.delete('/api/notes/:id', (req, res) => {
+    
+})
+
 
 
