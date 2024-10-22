@@ -61,8 +61,13 @@ app.post('/api/notes', (req, res) => {
 
 // DELETE
 app.delete('/api/notes/:id', (req, res) => {
-    
-})
+    const dbDel = db.filter((note) => 
+        note.id !== req.params.id)
+
+    fs.writeFileSync('./db/db.json', JSON.stringify(dbDel))
+
+    readFile.json(dbDel)
+});
 
 
 
