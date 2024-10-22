@@ -1,9 +1,9 @@
 // Dependencies
-const router = require('express').Router();
+const fb = require('express').Router();
 const saveData = require('../db/fsUtils');
 
 // GET 
-app.get('/notes', function (req, res) {
+fb.get('/notes', function (req, res) {
     saveData
         .getNotes()
         .then(notes => res.json(notes))
@@ -12,7 +12,7 @@ app.get('/notes', function (req, res) {
 });
 
 // POST 
-router.post('/notes', (req, res) => {
+fb.post('/notes', (req, res) => {
     saveData
         .addNote(req.body)
         .then((note) => res.json(note))
@@ -20,11 +20,11 @@ router.post('/notes', (req, res) => {
 });
 
 // DELETE
-router.delete('/notes/:id', function (req, res) {
+fb.delete('/notes/:id', function (req, res) {
     saveData
         .deleteNote(req.params.id)
         .then(() => res.json({ ok: true }))
         .catch(err => res.status(500).json(err));
 });
 
-module.exports = router;
+module.exports = fb;
