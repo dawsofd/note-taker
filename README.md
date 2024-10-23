@@ -35,6 +35,10 @@ The following animation shows the web application's appearance and functionality
 
 ## Walkthrough Video
 
+## Link to Deployed Application 
+
+![Link to Deployed Application](https://note-taker-aak0.onrender.com)
+
 ## Installation 
 
 ```
@@ -45,7 +49,5 @@ npm install express
 ## Usage
 
 ```
-node index.js
+node server.js
 ```
-
-## Tests
