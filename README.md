@@ -31,7 +31,11 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 The following animation shows the web application's appearance and functionality:
 
-![Application preview GIF](./)
+![Application preview GIF](./public/assets/images/note-taker.gif)
+
+## Walkthrough Video
+
+![Link to application walkthrough video](https://drive.google.com/file/d/1yd0At80iE6R8SV1Jqf-A0xMtH8SVBYx1/view)
 
 
 ## Link to Deployed Application 
