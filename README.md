@@ -33,7 +33,6 @@ The following animation shows the web application's appearance and functionality
 
 ![Application preview GIF](./)
 
-## Walkthrough Video
 
 ## Link to Deployed Application 
 
